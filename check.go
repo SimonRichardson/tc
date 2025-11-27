@@ -34,6 +34,7 @@ package tc
 
 import (
 	"fmt"
+	"math/rand/v2"
 	"reflect"
 	"runtime"
 	"strings"
@@ -151,6 +152,13 @@ func newSuiteRunner(suite any) *suiteRunner {
 			runner.tests = append(runner.tests, method)
 		}
 	}
+
+	// Randomize the test order, so that we never have tests that depend
+	// on each other passing just because of the order.
+	rand.Shuffle(len(runner.tests), func(i, j int) {
+		runner.tests[i], runner.tests[j] = runner.tests[j], runner.tests[i]
+	})
+
 	return runner
 }
 
