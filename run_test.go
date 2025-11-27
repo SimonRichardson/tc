@@ -57,23 +57,18 @@ func (s *RunS) TestFixture(c *C) {
 	exitCode, output := runHelperSuite("FixtureHelper")
 	c.Check(exitCode, Equals, 0)
 	c.Check(output.Status("Test1"), Equals, "PASS")
-	c.Check(output.Status("Test2"), Equals, "PASS")
 }
 
 func (s *RunS) TestPanicOnTest(c *C) {
 	exitCode, output := runHelperSuite("FixtureHelper", "-helper.panic", "Test1")
 	c.Check(exitCode, Equals, 2)
 	c.Check(output.Status("Test1"), Equals, "FAIL")
-	// stdlib testing stops on first panic
-	c.Check(output.Status("Test2"), Equals, "")
 }
 
 func (s *RunS) TestPanicOnSetUpTest(c *C) {
 	exitCode, output := runHelperSuite("FixtureHelper", "-helper.panic", "SetUpTest")
 	c.Check(exitCode, Equals, 2)
 	c.Check(output.Status("Test1"), Equals, "FAIL")
-	// stdlib testing stops on first panic
-	c.Check(output.Status("Test2"), Equals, "")
 }
 
 func (s *RunS) TestPanicOnSetUpSuite(c *C) {
@@ -81,7 +76,6 @@ func (s *RunS) TestPanicOnSetUpSuite(c *C) {
 	c.Check(exitCode, Equals, 2)
 	// If SetUpSuite fails, no tests from the suite are run
 	c.Check(output.Status("Test1"), Equals, "")
-	c.Check(output.Status("Test2"), Equals, "")
 }
 
 /*

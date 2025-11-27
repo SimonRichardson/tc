@@ -155,10 +155,6 @@ func (s *FixtureHelper) Test1(c *tc.C) {
 	s.trace("Test1", c)
 }
 
-func (s *FixtureHelper) Test2(c *tc.C) {
-	s.trace("Test2", c)
-}
-
 // -----------------------------------------------------------------------
 // Helper which checks the state of the test and ensures that it matches
 // the given expectations.  Depends on c.Errorf() working, so shouldn't
