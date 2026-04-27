@@ -8,6 +8,8 @@ suite runner.
 Tests within a suite are run in randomised order to prevent order-dependent
 failures.
 
+Many checkers have been inherited from [juju/testing](https://github.com/juju/testing).
+
 ## Installation
 
 ```sh
@@ -74,6 +76,11 @@ An optional `tc.Commentf` may be appended for extra context on failure.
 | `LessThan` / `GreaterThan` | numeric less-than / greater-than comparison |
 | `OrderedLeft` / `OrderedRight` / `OrderedMatch` | typed slice ordering checks |
 | `UnorderedMatch` | typed slice unordered match |
+| `IsUUID` | value is a valid UUID string |
+| `IsNonZeroUUID` | value is a valid non-zero UUID |
+| `IsZeroUUID` | value is the zero UUID |
+| `Deref` | dereferences a pointer before passing to another checker |
+| `IsZero` / `NotZero` | value matches the zero value for the type |
 
 ### Composable Checkers
 
@@ -93,6 +100,19 @@ c.Assert(s, tc.Or(
     tc.Bind(tc.Equals, "foo"),
     tc.Bind(tc.Equals, "bar"),
 ))
+```
+
+### Deref
+
+`Deref` dereferences a pointer before passing the value to the wrapped
+checker. It fails immediately if the obtained value is nil.
+
+```go
+name := getNamePointer()
+c.Assert(name, tc.Deref(tc.Equals), "alice")
+
+entity := getEntityPointer()
+c.Assert(entity, tc.Deref(tc.DeepEquals), expectedEntity)
 ```
 
 ### Bind
