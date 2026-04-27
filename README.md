@@ -79,8 +79,8 @@ An optional `tc.Commentf` may be appended for extra context on failure.
 | `IsUUID` | value is a valid UUID string |
 | `IsNonZeroUUID` | value is a valid non-zero UUID |
 | `IsZeroUUID` | value is the zero UUID |
-| `Deref` | dereferences a pointer before passing to another checker |
 | `IsZero` / `NotZero` | value matches the zero value for the type |
+| `Deref` | dereferences a pointer before passing to another checker |
 
 ### Composable Checkers
 

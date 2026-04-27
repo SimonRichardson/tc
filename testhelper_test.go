@@ -34,7 +34,7 @@ import (
 	"strings"
 	"testing"
 
-	check "github.com/juju/tc"
+	check "github.com/canonical/tc"
 )
 
 var (

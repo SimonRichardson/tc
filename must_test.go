@@ -9,7 +9,7 @@ import (
 	"slices"
 	"sync/atomic"
 
-	. "github.com/juju/tc"
+	. "github.com/canonical/tc"
 )
 
 type MustSuite struct{}

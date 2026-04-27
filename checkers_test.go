@@ -31,7 +31,7 @@ import (
 	"reflect"
 	"runtime"
 
-	"github.com/juju/tc"
+	"github.com/canonical/tc"
 )
 
 type CheckersS struct{}

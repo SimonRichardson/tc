@@ -1,4 +1,4 @@
-module github.com/juju/tc
+module github.com/canonical/tc
 
 go 1.25
 

@@ -12,7 +12,7 @@ import (
 	"runtime"
 	"strings"
 
-	. "github.com/juju/tc"
+	. "github.com/canonical/tc"
 )
 
 type FileSuite struct{}

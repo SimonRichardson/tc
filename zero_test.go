@@ -4,7 +4,7 @@
 package tc_test
 
 import (
-	"github.com/juju/tc"
+	"github.com/canonical/tc"
 )
 
 func (s *CheckersS) TestIsZero(c *tc.C) {

@@ -16,7 +16,7 @@ import (
 	"testing"
 	"time"
 
-	. "github.com/juju/tc"
+	. "github.com/canonical/tc"
 )
 
 func deepEqual(a1, a2 any) bool {

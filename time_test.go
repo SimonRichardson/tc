@@ -6,7 +6,7 @@ package tc_test
 import (
 	"time"
 
-	. "github.com/juju/tc"
+	. "github.com/canonical/tc"
 )
 
 type TimeSuite struct{}

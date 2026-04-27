@@ -4,7 +4,7 @@
 package tc_test
 
 import (
-	. "github.com/juju/tc"
+	. "github.com/canonical/tc"
 )
 
 type Inner struct {

@@ -6,7 +6,7 @@ package tc_test
 import (
 	"fmt"
 
-	. "github.com/juju/tc"
+	. "github.com/canonical/tc"
 )
 
 // a ConstError is a prototype for a certain type of error

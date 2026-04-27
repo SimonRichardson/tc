@@ -27,7 +27,7 @@
 package tc_test
 
 import (
-	. "github.com/juju/tc"
+	. "github.com/canonical/tc"
 )
 
 var _ = InternalSuite(&RunS{})

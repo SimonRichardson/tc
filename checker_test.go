@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"time"
 
-	. "github.com/juju/tc"
+	. "github.com/canonical/tc"
 )
 
 type CheckerSuite struct{}

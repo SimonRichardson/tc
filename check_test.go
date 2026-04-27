@@ -37,7 +37,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/juju/tc"
+	"github.com/canonical/tc"
 )
 
 // We count the number of suites run at least to get a vague hint that the
